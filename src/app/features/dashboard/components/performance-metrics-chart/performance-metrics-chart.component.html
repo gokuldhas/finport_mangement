@@ -1,0 +1,11 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Performance Metrics <span class="chart-icon"><mat-icon>settings</mat-icon></span></h5>
+    </div>
+    <div class="dashboard">
+        <!-- ng2-charts -->
+        <canvas baseChart [datasets]="performanceData" [labels]="performanceLabels" 
+        [options]="chartOptions" chartType="bar">
+        </canvas>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+.dashboard {
+    text-align: center;
+  }
+  
+  .charts {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  canvas {
+    max-width: 400px;
+    margin: 20px;
+  }
+
+  mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Spacer to push the button to the right */
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  button {
+    margin-right: 16px; /* Optional right margin */
+  }
+  
+
+  .dashboard-container {
+    padding: 16px;
+  }
+  
+  @media (max-width: 600px) {
+    .dashboard-item {
+      margin-bottom: 16px;
+    }
+  }

@@ -1,0 +1,43 @@
+<h2 mat-dialog-title>Investment Details</h2>
+<form [formGroup]="investmentForm" (ngSubmit)="onSubmit()">
+  <mat-dialog-content>
+    <div class="form-group">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Asset Type</mat-label>
+        <input matInput formControlName="assetType" placeholder="e.g. Stock, Bond">
+        <mat-error *ngIf="investmentForm.get('assetType')?.invalid">Asset Type is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Quantity</mat-label>
+        <input matInput formControlName="quantity" type="number" placeholder="e.g. 100">
+        <mat-error *ngIf="investmentForm.get('quantity')?.invalid">Quantity must be a positive number</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Purchase Price</mat-label>
+        <input matInput formControlName="purchasePrice" type="number" placeholder="e.g. 1000">
+        <mat-error *ngIf="investmentForm.get('purchasePrice')?.invalid">Price must be a positive number</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Purchase Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="purchaseDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="investmentForm.get('purchaseDate')?.invalid">Please provide a valid date</mat-error>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions align="end">
+    <button mat-button type="button" (click)="onCancel()">Cancel</button>
+    <button mat-button type="submit" [disabled]="investmentForm.invalid">Submit</button>
+  </mat-dialog-actions>
+</form>

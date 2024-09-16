@@ -1,0 +1,18 @@
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
+  <span>Dashboard</span>
+  <button mat-fab (click)="openDialog()">
+    <mat-icon>library_add</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="dashboard-container" fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="center start">
+  <div fxFlex="100%" fxFlex.gt-sm="33%" fxFlex.gt-md="33%" class="dashboard-item">
+    <app-asset-allocation-chart></app-asset-allocation-chart>
+  </div>
+  <div fxFlex="100%" fxFlex.gt-sm="33%" fxFlex.gt-md="33%" class="dashboard-item">
+    <app-market-trends-chart></app-market-trends-chart>
+  </div>
+  <div fxFlex="100%" fxFlex.gt-sm="33%" fxFlex.gt-md="33%" class="dashboard-item">
+    <app-performance-metrics-chart></app-performance-metrics-chart>
+  </div>
+</div>

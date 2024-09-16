@@ -1,0 +1,11 @@
+<div class="card">
+    <div class="card-header">
+      <h5>Market Trends <span class="chart-icon"><mat-icon>settings</mat-icon></span></h5>
+    </div>
+    <div class="dashboard">
+      <!-- ng2-charts -->
+      <canvas baseChart [datasets]="marketTrendsData" [labels]="marketTrendsLabels" 
+        [options]="chartOptions" [legend]="true">
+      </canvas>
+    </div>
+  </div>
